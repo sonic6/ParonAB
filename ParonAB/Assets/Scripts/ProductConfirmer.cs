@@ -14,11 +14,7 @@ public class ProductConfirmer : MonoBehaviour
     //Creates an instance of the Class NewProducts and gives its variables the values insterted through the UI
     public void CreateNewProduct()
     {
-        NewProduct prod = new NewProduct();
-        prod.number = number.text;
-        prod.productName = productName.text;
-        prod.price = int.Parse(price.text);
-
+        NewProduct prod = new NewProduct(number.text.ToUpper(), productName.text, int.Parse(price.text));
         manager.AddNewProduct(prod);
     }
 }
